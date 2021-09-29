@@ -1,0 +1,12 @@
+apiVersion: rbac.authorization.k8s.io/v1
+kind: ClusterRoleBinding
+metadata:
+  name: {{ include "cloudwatch-agent-for-log.fullname" . }}-role-binding
+subjects:
+  - kind: ServiceAccount
+    name: {{ include "cloudwatch-agent-for-log.serviceAccountName" . }}
+    namespace: {{ .Release.Namespace }}
+roleRef:
+  apiGroup: rbac.authorization.k8s.io
+  kind: ClusterRole
+  name: {{ include "cloudwatch-agent-for-log.fullname" . }}-role

@@ -1,0 +1,7 @@
+apiVersion: v2
+name: cloudwatch-agent-for-log
+description: A Helm chart for cloudWatch agent that collect kubernetes logs (applications, host, dataplane)
+version: "0.2.1"
+appVersion: "2.10.0"
+maintainers:
+- name: chmoon

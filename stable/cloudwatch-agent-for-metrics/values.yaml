@@ -1,0 +1,41 @@
+image:
+  repository: amazon/cloudwatch-agent
+  pullPolicy: IfNotPresent
+  tag: ""
+
+imagePullSecrets: []
+nameOverride: ""
+fullnameOverride: ""
+
+clusterName: ""
+region: ""
+metricsCollectionInterval: 30
+hostNetwork: false
+
+statsd: {}
+# - containerPort: 8125
+#   hostPort: 8125
+#   protocol: UDP
+
+serviceAccount:
+  create: true
+  annotations: {}
+  name: ""
+
+securityContext: {}
+
+resources: {}
+  # limits:
+  #   memory: 200Mi
+  # requests:
+  #   cpu: 200m
+  #   memory: 200Mi
+
+nodeSelector: {}
+
+tolerations: {}
+# - key: "dedicated"
+#   value: "operations"
+#   effect: "NoSchedule"
+
+affinity: {}

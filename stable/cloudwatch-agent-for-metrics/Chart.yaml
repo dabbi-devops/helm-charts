@@ -1,0 +1,7 @@
+apiVersion: v2
+name: cloudwatch-agent-for-metrics
+description: A Helm chart for cloudWatch agent that collect kubernetes metrics
+version: "0.2.2"
+appVersion: "1.247348.0b251302"
+maintainers:
+- name: chmoon
