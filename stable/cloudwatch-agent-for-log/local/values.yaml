@@ -1,0 +1,52 @@
+# eksctl create iamserviceaccount \
+# --name cloudwatch-agent \
+# --namespace amazon-cloudwatch \
+# --cluster dabbi-local-apne2-eks-dcgbg \
+# --attach-policy-arn arn:aws:iam::aws:policy/CloudWatchAgentServerPolicy \
+# --approve \
+# --override-existing-serviceaccounts
+
+image:
+  repository: amazon/aws-for-fluent-bit
+  pullPolicy: Always
+  # Overrides the image tag whose default is the chart appVersion.
+  tag: ""
+
+imagePullSecrets: []
+nameOverride: ""
+fullnameOverride: ""
+
+clusterName: "dabbi-local-apne2-eks-dcgbg"
+region: "ap-northeast-2"
+httpServer: "On"
+httpPort: "2020"
+readHead: "Off"
+readTail: "On"
+
+serviceAccount:
+  # Specifies whether a service account should be created
+  create: false
+  # Annotations to add to the service account
+  annotations:
+    eks.amazonaws.com/role-arn: arn:aws:iam::147026937442:role/eksctl-dabbi-local-apne2-eks-dcgbg-addon-iam-Role1-8XTB7MCQQD03
+  # The name of the service account to use.
+  # If not set and create is true, a name is generated using the fullname template
+  name: "cloudwatch-agent"
+
+securityContext: {}
+
+resources:
+  limits:
+    memory: 100Mi
+  requests:
+    cpu: 100m
+    memory: 100Mi
+
+nodeSelector: {}
+
+tolerations:
+- key: "dedicated"
+  value: "operations"
+  effect: "NoSchedule"
+
+affinity: {}
