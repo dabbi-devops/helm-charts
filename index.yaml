@@ -1,0 +1,27 @@
+apiVersion: v1
+entries:
+  cloudwatch-agent-for-log:
+  - apiVersion: v2
+    appVersion: 2.10.0
+    created: "2021-09-29T15:40:12.569213+09:00"
+    description: A Helm chart for cloudWatch agent that collect kubernetes logs (applications, host, dataplane)
+    digest: 4c0efdac3d6538e4e275f79b9c6e73e9002842e1070d266b01aaf74ba5f69762
+    maintainers:
+    - name: chmoon
+    name: cloudwatch-agent-for-log
+    urls:
+    - https://dabbi-devops.github.io/helm-charts/cloudwatch-agent-for-log-0.2.1.tgz
+    version: 0.2.1
+  cloudwatch-agent-for-metrics:
+  - apiVersion: v2
+    appVersion: 1.247348.0b251302
+    created: "2021-09-29T15:40:12.5695486+09:00"
+    description: A Helm chart for cloudWatch agent that collect kubernetes metrics
+    digest: d7c57672bef54604fda0d0c4ec7d1208bc7dcfd45109e474aaba7334bfafe7f8
+    maintainers:
+    - name: chmoon
+    name: cloudwatch-agent-for-metrics
+    urls:
+    - https://dabbi-devops.github.io/helm-charts/cloudwatch-agent-for-metrics-0.2.2.tgz
+    version: 0.2.2
+generated: "2021-09-29T15:40:12.5686748+09:00"
